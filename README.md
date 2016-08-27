@@ -1,6 +1,6 @@
 # dev-practice-java
 
-Tis project contains java prohrammes related with the ds, algo, design patterns and problem solving.
+This project contains java prohrammes related with the ds, algo, design patterns and problem solving.
 
 
 
