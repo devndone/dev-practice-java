@@ -1,7 +1,5 @@
 package practice.dev.ds;
 
-import practice.dev.problemsolving.UnderflowException;
-
 //AvlTree class
 //
 //CONSTRUCTION: with no initializer

@@ -46,7 +46,6 @@ public final class Game {
 	private void makePlayers(String[] playerNames) {
 		assert playerNames.length > 0 : "There must be some player";
 		System.out.println("Players are : ");
-		int i = 1;
 		for (String str : playerNames) {
 			Player player = new Player(str);
 			players.add(player); // adds to the end System.out.println(i + ". "

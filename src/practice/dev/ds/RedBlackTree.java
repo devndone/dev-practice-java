@@ -1,7 +1,5 @@
 package practice.dev.ds;
 
-import practice.dev.problemsolving.UnderflowException;
-
 //RedBlackTree class
 //
 //CONSTRUCTION: with no parameters

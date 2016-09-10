@@ -1,8 +1,5 @@
 package practice.dev.ds;
 
-import practice.dev.algo.PriorityQueue;
-import practice.dev.algo.UnderflowException;
-
 /**
  * A priority queue is an abstract data type (ADT) supporting the following three operations:
  * add an element to the queue with an associated priority

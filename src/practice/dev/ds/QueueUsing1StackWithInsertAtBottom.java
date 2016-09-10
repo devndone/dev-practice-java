@@ -2,8 +2,6 @@ package practice.dev.ds;
 
 import java.util.Stack;
 
-import practice.dev.algo.UnderflowException;
-
 public class QueueUsing1StackWithInsertAtBottom extends Object {
 
 	private Stack<Integer> stack = new Stack<>();
@@ -24,15 +22,6 @@ public class QueueUsing1StackWithInsertAtBottom extends Object {
 			this.res = stack.pop();
 		}
 		return this.res;
-	}
-
-	private void reverse(Stack<Integer> stack) {
-		if (stack.isEmpty()) {
-			return;
-		}
-		int temp = stack.pop();
-		reverse(stack);
-		insertAtBottom(stack, temp);
 	}
 
 	private void insertAtBottom(Stack<Integer> stack, int data) {
