@@ -27,11 +27,13 @@ public class SubArraysWithSumK {
 			// If point where sum = (preSum - k) is present, it means that
 			// between that
 			// point and this, the sum has to equal k
-			System.out.println("preSum - k = " + (preSum - k));
+			//System.out.println("preSum - k = " + (preSum - k));
 			if (map.containsKey(preSum - k)) { // Subarray found
+				System.out.println("\npreSum - k = " + (preSum - k));
+				System.out.println("list = " + map.get(preSum - k));
 				List<Integer> startIndices = map.get(preSum - k);
 				for (int start : startIndices) {
-					System.out.println("Start: " + (start + 1) + "\tEnd: " + i);
+					System.out.println("Start: " + (start + 1) + "\tEnd: " + i + " map: " + map);
 				}
 			}
 
@@ -40,7 +42,7 @@ public class SubArraysWithSumK {
 				newStart = map.get(preSum);
 			}
 			newStart.add(i);
-			System.out.println("preSum = " + preSum + ", newStart = " + newStart);
+			//System.out.println("preSum = " + preSum + ", newStart = " + newStart);
 			map.put(preSum, newStart);
 		}
 	}

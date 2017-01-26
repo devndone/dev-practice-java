@@ -1,7 +1,10 @@
 package practice.dev.problemsolving;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 
 public class MaxSubArray {
 
@@ -43,7 +46,7 @@ public class MaxSubArray {
 	}
 	
 	/*
-	 * Best Solution for all cases
+	 * Best Solution for all cases for finding max value, and start & end index too.
 	 */
 	// DO NOT MODFIY THE LIST. 
 	public int maxSubArrayByKadaneAlgorithmModified(final List<Integer> a) {
@@ -71,6 +74,33 @@ public class MaxSubArray {
 			ans = Math.max(ans, sum);
 		}
 		return ans;
+	}
+	
+	/*
+	 * Best Solution for all cases but only for finding max value, and not for finding start & end index
+	 */
+	// DO NOT MODFIY THE LIST. 
+	public static int maxSubArraySum(final List<Integer> arr) {
+		int max_so_far = arr.get(0);
+		int curr_max = arr.get(0);
+		for(int i = 0; i < arr.size(); i++) {
+			curr_max = Math.max(arr.get(i), (curr_max + arr.get(i)));
+			max_so_far = Math.max(max_so_far, curr_max);
+		}
+		return max_so_far;
+	}
+	
+	public static void main(String[] args) {
+		ArrayList<Integer> arr = new ArrayList<>();
+		arr.add(-2);
+		arr.add(-3);
+		arr.add(4);
+		arr.add(-1);
+		arr.add(-2);
+		arr.add(1);
+		arr.add(5);
+		arr.add(-3);
+		System.out.println("Maximum contiguous sum is " + maxSubArraySum(arr));
 	}
 	
 	// DO NOT MODFIY THE LIST. 
