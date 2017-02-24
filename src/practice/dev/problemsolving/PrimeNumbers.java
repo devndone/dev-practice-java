@@ -64,8 +64,9 @@ public class PrimeNumbers {
        if (n <= 1) {
            return false;
        }
-       for (int i = 2; i < Math.sqrt(n); i++) {
-           if (n % i == 0) {
+       int upperLimit = (int) Math.sqrt(n);
+       for (int i = 2; i <= upperLimit ; i++) {
+           if (i < n && n % i == 0) {
                return false;
            }
        }
