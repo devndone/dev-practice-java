@@ -35,9 +35,63 @@ class LinkedList {
 		return newNode;
 	}
 
+	Node reverse(Node head, int k) {
+		Node current = head;
+		Node next = null;
+		Node prev = null;
+
+		int count = 0;
+
+		/* Reverse first k nodes of linked list */
+		while (count < k && current != null) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+			count++;
+		}
+
+		/*
+		 * next is now a pointer to (k+1)th node Recursively call for the list
+		 * starting from current. And make rest of the list as next of first
+		 * node
+		 */
+		if (next != null)
+			head.next = reverse(next, k);
+
+		// prev is now head of input list
+		return prev;
+	}
+
+	/* Utility functions */
+
+	/* Inserts a new Node at front of the list. */
+	public void push(int new_data) {
+		/*
+		 * 1 & 2: Allocate the Node & Put in the data
+		 */
+		Node new_node = new Node(new_data);
+
+		/* 3. Make next of new Node as head */
+		new_node.next = head;
+
+		/* 4. Move the head to point to new Node */
+		head = new_node;
+	}
+
+	/* Function to print linked list */
+	void printList() {
+		Node temp = head;
+		while (temp != null) {
+			System.out.print(temp.data + " ");
+			temp = temp.next;
+		}
+		System.out.println();
+	}
+
 	/**
 	 * 
-	 Method 1 (Check one by one) We know that Floyd’s Cycle detection
+	 * Method 1 (Check one by one) We know that Floyd’s Cycle detection
 	 * algorithm terminates when fast and slow pointers meet at a common point.
 	 * We also know that this common point is one of the loop nodes (2 or 3 or 4
 	 * or 5 in the above diagram). We store the address of this in a pointer
@@ -106,7 +160,7 @@ class LinkedList {
 
 	/**
 	 * 
-	 Method 2 (Better Solution) This method is also dependent on Floyd’s Cycle
+	 * Method 2 (Better Solution) This method is also dependent on Floyd’s Cycle
 	 * detection algorithm. 1) Detect Loop using Floyd’s Cycle detection algo
 	 * and get the pointer to a loop node. 2) Count the number of nodes in loop.
 	 * Let the count be k. 3) Fix one pointer to the head and another to kth
@@ -177,7 +231,7 @@ class LinkedList {
 
 	/**
 	 * 
-	 Method 3 (Optimized Method 2: Without Counting Nodes in Loop) We do not
+	 * Method 3 (Optimized Method 2: Without Counting Nodes in Loop) We do not
 	 * need to count number of nodes in Loop. After detecting the loop, if we
 	 * start slow pointer from head and move both slow and fast pointers at same
 	 * speed until fast don’t meet, they would meet at the beginning of linked
@@ -265,17 +319,17 @@ class LinkedList {
 
 	public void reverse() {
 
-		Node head = this.head;
-		Node temp = null;
+		Node headNode = this.head;
+		Node prevNode = null;
 		Node nextNode = null;
-		while (head != null) {
-			nextNode = head.next;
-			head.next = temp;
-			temp = head;
-			head = nextNode;
+		while (headNode != null) {
+			nextNode = headNode.next;// nn=2//nn=3
+			headNode.next = prevNode;// hn=null//hn=1
+			prevNode = headNode;// t=1//t=2
+			headNode = nextNode;// h=2//h=3
 		}
 
-		this.head = temp;
+		this.head = prevNode;
 	}
 
 	public void reverseRecusive() {
@@ -319,6 +373,29 @@ class LinkedList {
 	}
 
 	public static void main(String[] args) {
+
+		LinkedList llist = new LinkedList();
+
+		/*
+		 * Constructed Linked List is 1->2->3->4->5->6-> 7->8->8->9->null
+		 */
+		llist.push(9);
+		llist.push(8);
+		llist.push(7);
+		llist.push(6);
+		llist.push(5);
+		llist.push(4);
+		llist.push(3);
+		llist.push(2);
+		llist.push(1);
+
+		System.out.println("Given Linked List");
+		llist.printList();
+
+		llist.head = llist.reverse(llist.head, 3);
+
+		System.out.println("Reversed list");
+		llist.printList();
 
 		LinkedList ll = new LinkedList();
 		ll.add(10);
