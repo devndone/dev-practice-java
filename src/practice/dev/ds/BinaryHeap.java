@@ -37,7 +37,7 @@ package practice.dev.ds;
 //Throws UnderflowException for findMin and deleteMin when empty
 
 /**
- * Implements a binary heap. Note that all "matching" is based on the compareTo
+ * Implements a min binary heap. Note that all "matching" is based on the compareTo
  * method.
  */
 public class BinaryHeap implements PriorityQueue {
