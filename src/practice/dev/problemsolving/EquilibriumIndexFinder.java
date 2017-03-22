@@ -52,7 +52,7 @@ package practice.dev.problemsolving;
 public class EquilibriumIndexFinder {
 
 	public int solution(int[] A) {
-		int res = -1;
+		Integer res = -1;
 		if (A == null || A.length < 1) {
 			return res;
 		}
@@ -82,7 +82,7 @@ public class EquilibriumIndexFinder {
 		return -1;
 	}
 
-	private void getEquiIndex(int[] in, int i, int sumTill, int sumOther, int res) {
+	private void getEquiIndex(int[] in, int i, int sumTill, int sumOther, Integer res) {
 		if (i < 0 || i >= in.length) {
 			return;
 		}
