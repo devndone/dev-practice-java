@@ -1,11 +1,11 @@
 package practice.dev.problemsolving;
 
-import java.util.List;
+import java.util.*;
 
 public class LargestNumberFormationFromAGivenListOfNumbers {
 	
 	public String largestNumber(final List<Integer> a) {
-	    java.util.Collections.sort(a, new CombiComparator());
+	    Collections.sort(a, new CombiComparator());
 	    StringBuilder sb = new StringBuilder();
 	    for(Integer temp : a) {
 	    	if(temp != null) {

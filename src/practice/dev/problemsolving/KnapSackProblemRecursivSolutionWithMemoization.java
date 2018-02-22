@@ -1,7 +1,5 @@
 package practice.dev.problemsolving;
 
-import java.util.Arrays;
-
 public class KnapSackProblemRecursivSolutionWithMemoization {
 	int[] v = { 7, 2, 1, 6, 12 };// vertices
 	int[] w = { 3, 1, 2, 4, 6 };// weight set
@@ -20,12 +18,7 @@ public class KnapSackProblemRecursivSolutionWithMemoization {
 	int ks(int c, int i) {
 
 		if (i > n) {
-			solarr[c][i] = 0;
-			return solarr[c][i];
-		}
-
-		for (int j : solarr[c]) {
-			java.util.List<Integer> ar = Arrays.asList(j);
+			return 0;
 		}
 
 		if (c < w[i]) {// if true then ignore the present index and recursive

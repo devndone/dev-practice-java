@@ -21,6 +21,7 @@ public class Immutable {
 
 	public static void main(String[] args) throws NoSuchFieldException,
 			SecurityException, IllegalArgumentException, IllegalAccessException {
+		
 		//final Immutable immutable = new Immutable(Integer.MIN_VALUE);
 		final Immutable immutable = new Immutable();
 

@@ -47,21 +47,21 @@ public class BinaryTreeIsBSTWithInorder {
 	 */
 	boolean isBST(Node node) {
 
-		if (root == null) {
+		if (node == null) {
 			return true;
 		}
 		Node prev = null;
 		// traverse the tree in inorder fashion and
 		// keep a track of previous node
 		// if (root != null) {
-		if (!isBST(root.left))
+		if (!isBST(node.left))
 			return false;
 
 		// allows only distinct values node
-		if (prev != null && root.data <= prev.data)
+		if (prev != null && node.data <= prev.data)
 			return false;
-		prev = root;
-		if (!isBST(root.right))
+		prev = node;
+		if (!isBST(node.right))
 			return false;
 		// }
 		return true;
