@@ -18,14 +18,14 @@ public class GraphBreadthFirstTraversal {
 		T vertex;
 		while(!queue.isEmpty()) {
 			vertex = queue.poll();
-			if(visited[(int)vertex] == 1) {
+			if(visited[(Integer)vertex] == 1) {
 				continue;
 			}
 			System.out.println(vertex + "->");
-			visited[(int)vertex] = 1;
+			visited[(Integer)vertex] = 1;
 			List<T> adjacentVertices = graph.getAdjacentVertices(vertex);
 			for(T v : adjacentVertices) {
-				if(visited[(int)v] != 1) {
+				if(visited[(Integer)v] != 1) {
 					queue.add(v);
 				}
 			}

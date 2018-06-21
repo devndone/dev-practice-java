@@ -22,22 +22,22 @@ public class AdjacencySetGraph<T extends Comparable<T>> implements Graph<T> {
 	
 	@Override
 	public List<T> getAdjacentVertices(T v) {
-		if((int)v >= this.numVertices || (int)v < 0) {
+		if((Integer)v >= this.numVertices || (Integer)v < 0) {
 			throw new IllegalArgumentException("Vertes is not valid: " + v);
 		}
 		
-		return this.vertexList.get((int)v).getAdjacentVertices();
+		return this.vertexList.get((Integer)v).getAdjacentVertices();
 	}
 
 	@Override
 	public void addEdge(T v1, T v2) {
-		if((int)v1 >= this.numVertices || (int)v1 < 0 || (int)v2 >= this.numVertices || (int)v2 < 0) {
+		if((Integer)v1 >= this.numVertices || (Integer)v1 < 0 || (Integer)v2 >= this.numVertices || (Integer)v2 < 0) {
 			throw new IllegalArgumentException("Vertex is not valid: " + v1 + ", " + v2);
 		}
 		
-		this.vertexList.get((int)v1).addEdge(v2);
+		this.vertexList.get((Integer)v1).addEdge(v2);
 		if(this.graphType == GraphType.UNDIRECTED) {
-			this.vertexList.get((int)v2).addEdge(v2);
+			this.vertexList.get((Integer)v2).addEdge(v2);
 		}
 	}
 

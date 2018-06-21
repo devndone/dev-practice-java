@@ -38,7 +38,7 @@ public class CrunchifyInMemoryCache<K, T> {
 			final long crunchifyTimerInterval, int maxItems) {
 		this.timeToLive = crunchifyTimeToLive * 1000;
 
-		crunchifyCacheMap = new LRUMap(maxItems);
+		crunchifyCacheMap = new LRUMap<>(maxItems);
 
 		if (timeToLive > 0 && crunchifyTimerInterval > 0) {
 
@@ -65,11 +65,10 @@ public class CrunchifyInMemoryCache<K, T> {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public T get(K key) {
 		synchronized (crunchifyCacheMap) {
 			CrunchifyCacheObject c = (CrunchifyCacheObject) ((List<K>) crunchifyCacheMap)
-					.get((int) key);
+					.get((Integer) key);
 
 			if (c == null)
 				return null;

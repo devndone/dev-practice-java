@@ -11,10 +11,10 @@ public class GraphDepthFirstTraversal {
 	 * A vertex gets processed after all its adjacent vertex gets processed
 	 */
 	public static <T extends Comparable<T>> void traverse(Graph<T> graph, int[] visited, T currentVertex) {
-		if(visited[(int) currentVertex] == 1) {
+		if(visited[(Integer) currentVertex] == 1) {
 			return;
 		}
-		visited[(int)currentVertex] = 1;
+		visited[(Integer)currentVertex] = 1;
 		
 		List<T> adjacentVertices = graph.getAdjacentVertices(currentVertex);
 		for(T vertex : adjacentVertices) {
