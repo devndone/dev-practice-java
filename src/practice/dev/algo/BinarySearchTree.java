@@ -16,6 +16,8 @@ package practice.dev.algo;
 // ******************ERRORS********************************
 // Throws UnderflowException as appropriate
 
+import java.util.Arrays;
+
 /**
  * Implements an unbalanced binary search tree.
  * Note that all "matching" is based on the compareTo method.
@@ -66,6 +68,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
      */
     public AnyType findMax( )
     {
+        //Arrays.asList(1, 4, 6, 9);
         if( isEmpty( ) )
             throw new UnderflowException("Sorry No Element is Available in Tree!");
         return findMax( root ).element;
@@ -216,7 +219,8 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
         if( t != null )
         {
             printTree( t.left );
-            System.out.println( t.element );
+            System.out.print("\t");
+            System.out.print( t.element );
             printTree( t.right );
         }
     }
@@ -278,6 +282,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
 
         //if( NUMS < 40 ) //wrong condition
         t.printTree( );
+        System.out.println();
         System.out.println( "FindMin is " + t.findMin());
         System.out.println( "FindMax is " + t.findMax());
         
@@ -287,11 +292,5 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
         for( int i = 2; i < NUMS; i+=2 )
              if( !t.contains( i ) )
                  System.out.println( "Find error1!" );
-
-        for( int i = 1; i < NUMS; i+=2 )
-        {
-            if( t.contains( i ) )
-                System.out.println( "Find error2!" );
-        }
     }
 }

@@ -1,10 +1,6 @@
 package practice.dev.problemsolving;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ArrangeNumbersToFormLargestNumber {
 	
@@ -20,6 +16,11 @@ public class ArrangeNumbersToFormLargestNumber {
 			String firstNumber = number + ((Sort) b).number;
 			String secondNumber = ((Sort) b).number + number;
 			return secondNumber.compareTo(firstNumber);
+		}
+
+		@Override
+		public String toString() {
+			return number.toString();
 		}
 	}
 	
@@ -42,6 +43,7 @@ public class ArrangeNumbersToFormLargestNumber {
 			list.add(new Sort(arr[i]));
 		}
 		Collections.sort(list);
+		System.out.print(Arrays.toString(list.toArray()) + " ==> ");
 		Iterator<Sort> it = list.iterator();
 		while (it.hasNext()) {
 			System.out.print(it.next().number);

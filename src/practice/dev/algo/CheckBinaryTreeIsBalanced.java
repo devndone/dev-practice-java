@@ -4,7 +4,7 @@ package practice.dev.algo;
  * 
  * @author dev
  *
-A binary tree is balanced when the depth (from the root) of the left and right sub trees of every node differs by 11 or less. 
+A binary tree is balanced when the depth (from the root) of the left and right sub trees of every node differs by 1 or less.
 We can check whether a binary tree is balanced or not using recursion.
  *
  */
@@ -25,12 +25,12 @@ public class CheckBinaryTreeIsBalanced {
 	Polynomial time algorithm > 
 
 	Take the root. Compute the height of its left and right sub tree.
-	If the difference between height of the left and right sub tree is less than or equal to 11, return true. 
+	If the difference between height of the left and right sub tree is less than or equal to 1, return true.
 	Otherwise, return false.
 	Repeat these two steps for each node in the given binary tree.
 
-	Worst case time complexity for skewed binary tree is O(n2)O(n2). 
-	In that case, the height of the tree is θ(n)θ(n) and at each level the height is computed which takes O(n)O(n) time.
+	Worst case time complexity for skewed binary tree is O(n2).
+	In that case, the height of the tree is θ(n) and at each level the height is computed which takes O(n)O(n) time.
 	*
 	*/
 	public static boolean checkBinaryTreeIsBalancedOrderOfNSquare(Node root){

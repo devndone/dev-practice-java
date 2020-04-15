@@ -23,7 +23,7 @@ public class AdjacencySetGraph<T extends Comparable<T>> implements Graph<T> {
 	@Override
 	public List<T> getAdjacentVertices(T v) {
 		if((Integer)v >= this.numVertices || (Integer)v < 0) {
-			throw new IllegalArgumentException("Vertes is not valid: " + v);
+			throw new IllegalArgumentException("Vertex is not valid: " + v);
 		}
 		
 		return this.vertexList.get((Integer)v).getAdjacentVertices();

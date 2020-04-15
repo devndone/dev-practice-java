@@ -44,10 +44,10 @@ class LinkedList {
 
 		/* Reverse first k nodes of linked list */
 		while (count < k && current != null) {
-			next = current.next;
-			current.next = prev;
-			prev = current;
-			current = next;
+			next = current.next;//next=2
+			current.next = prev;//c.n=null
+			prev = current;////p=1
+			current = next;//c=2
 			count++;
 		}
 
@@ -133,7 +133,7 @@ class LinkedList {
 
 			/*
 			 * Now start a pointer from loop_node and check if it ever reaches
-			 * ptr2
+			 * ptr1
 			 */
 			ptr2 = loop;
 			while (ptr2.next != loop && ptr2.next != ptr1) {
@@ -141,7 +141,7 @@ class LinkedList {
 			}
 
 			/*
-			 * If ptr2 reahced ptr1 then there is a loop. So break the loop
+			 * If ptr2 reached ptr1 then there is a loop. So break the loop
 			 */
 			if (ptr2.next == ptr1) {
 				break;
@@ -304,7 +304,7 @@ class LinkedList {
 		}
 
 		// If first list reached end, but second list has
-		// node. Add remaining nodes of first list at the
+		// node. Add remaining nodes of second list at the
 		// front of result list
 		while (node2 != null) {
 			Node temp = node2.next;

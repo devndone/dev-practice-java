@@ -20,7 +20,7 @@ imangolike
  * @author dev
  *
  */
-public class WordBreakWithMultipleCobinations {
+public class WordBreakWithMultipleCombinations {
 
 	public static void main(String[] args) throws java.lang.Exception {
 		

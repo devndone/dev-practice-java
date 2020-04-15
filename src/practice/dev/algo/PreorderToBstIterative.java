@@ -1,8 +1,9 @@
 package practice.dev.algo;
 
+import java.util.List;
 import java.util.Stack;
 
-public class PreorderToTreeIterative {
+public class PreorderToBstIterative {
 
 	class Node {
 		int data;
@@ -42,6 +43,26 @@ public class PreorderToTreeIterative {
 		return root;
 	}
 
+	public Node constructTree(List<Integer> preorder) {
+		Stack<Node> s = new Stack<Node>();
+		Node root = new Node(preorder.get(0));
+		s.add(root);
+		for (int i = 1; i < preorder.size(); i++) {
+			Node x = null;
+			while (!s.isEmpty() && preorder.get(i) > s.peek().data) {
+				x = s.pop();
+			}
+			if (x != null) {
+				x.right = new Node(preorder.get(i));
+				s.push(x.right);
+			} else {
+				s.peek().left = new Node(preorder.get(i));
+				s.push(s.peek().left);
+			}
+		}
+		return root;
+	}
+
 	public void displayTree(Node root) {
 		if (root != null) {
 			displayTree(root.left);
@@ -51,7 +72,7 @@ public class PreorderToTreeIterative {
 	}
 
 	public static void main(String args[]) {
-		PreorderToTreeIterative p = new PreorderToTreeIterative();
+		PreorderToBstIterative p = new PreorderToBstIterative();
 		int[] preOrder = { 10, 5, 2, 7, 15, 12, 20 };
 		Node root = p.constructTree(preOrder);
 		System.out.println("Inorder Traversal of Constructed Tree : ");

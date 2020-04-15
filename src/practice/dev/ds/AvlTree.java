@@ -130,14 +130,14 @@ public class AvlTree<AnyType extends Comparable<? super AnyType>> {
 				if (x.compareTo(t.left.element) < 0)
 					t = rotateWithLeftChild(t);
 				else
-					t = doubleWithLeftChild(t);
+					t = doubleRotateWithLeftChild(t);
 		} else if (compareResult > 0) {
 			t.right = insert(x, t.right);
 			if (height(t.right) - height(t.left) == 2)
 				if (x.compareTo(t.right.element) > 0)
 					t = rotateWithRightChild(t);
 				else
-					t = doubleWithRightChild(t);
+					t = doubleRotateWithRightChild(t);
 		} else
 			; // Duplicate; do nothing
 		t.height = Math.max(height(t.left), height(t.right)) + 1;
@@ -252,7 +252,7 @@ public class AvlTree<AnyType extends Comparable<? super AnyType>> {
 	 * then node k3 with new left child. For AVL trees, this is a double
 	 * rotation for case 2. Update heights, then return new root.
 	 */
-	private AvlNode<AnyType> doubleWithLeftChild(AvlNode<AnyType> k3) {
+	private AvlNode<AnyType> doubleRotateWithLeftChild(AvlNode<AnyType> k3) {
 		k3.left = rotateWithRightChild(k3.left);
 		return rotateWithLeftChild(k3);
 	}
@@ -262,7 +262,7 @@ public class AvlTree<AnyType extends Comparable<? super AnyType>> {
 	 * then node k1 with new right child. For AVL trees, this is a double
 	 * rotation for case 3. Update heights, then return new root.
 	 */
-	private AvlNode<AnyType> doubleWithRightChild(AvlNode<AnyType> k1) {
+	private AvlNode<AnyType> doubleRotateWithRightChild(AvlNode<AnyType> k1) {
 		k1.right = rotateWithLeftChild(k1.right);
 		return rotateWithRightChild(k1);
 	}
@@ -295,8 +295,6 @@ public class AvlTree<AnyType extends Comparable<? super AnyType>> {
 		final int NUMS = 4000;
 		final int GAP = 37;
 
-		System.out.println("Checking... (no more output means success)");
-
 		for (int i = GAP; i != 0; i = (i + GAP) % NUMS)
 			t.insert(i);
 
@@ -308,5 +306,7 @@ public class AvlTree<AnyType extends Comparable<? super AnyType>> {
 		for (int i = 1; i < NUMS; i++)
 			if (!t.contains(i))
 				System.out.println("Find error1!");
+
+		System.out.println("Checking... (no more output means success)");
 	}
 }

@@ -21,7 +21,6 @@ public class QueueUsing1StackWithReverseTop<T> {
 		if (size > 0)
 			size--;
 		return getReverseTop();
-
 	}
 
 	public T getReverseTop() {

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
-
 public class MaxSubArray {
 
 	// By Vishnu

@@ -1,12 +1,12 @@
 package practice.dev.algo;
 
 /**
- * 
+ *
  * @author dev
  *
- * 
+ *
  *         A program to check if a binary tree is BST or not :
- * 
+ *
  *         A binary search tree (BST) is a node based binary tree data structure
  *         which has the following properties. • The left subtree of a node
  *         contains only nodes with keys less than the node’s key. • The right

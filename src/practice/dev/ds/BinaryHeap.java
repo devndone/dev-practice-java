@@ -36,6 +36,10 @@ package practice.dev.ds;
 //******************ERRORS********************************
 //Throws UnderflowException for findMin and deleteMin when empty
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Implements a min binary heap. Note that all "matching" is based on the compareTo
  * method.
@@ -54,7 +58,7 @@ public class BinaryHeap implements PriorityQueue {
 	 * Construct the binary heap from an array.
 	 * 
 	 * @param items
-	 *            the inital items in the binary heap.
+	 *            the initial items in the binary heap.
 	 */
 	public BinaryHeap(Comparable[] items) {
 		currentSize = items.length;
@@ -171,6 +175,10 @@ public class BinaryHeap implements PriorityQueue {
 	 *            the index at which the percolate begins.
 	 */
 	private void percolateDown(int hole) {
+
+		//java.util.PriorityQueue<Integer> pq = new java.util.PriorityQueue<>((l, r) -> l.intValue() - r.intValue());
+		//List<Integer> set = new ArrayList<>(Collections.nCopies(20, Integer.MAX_VALUE));
+
 		int child;
 		Comparable tmp = array[hole];
 

@@ -1,9 +1,6 @@
 package practice.dev.problemsolving;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ArrangeNumbersToFormSmallestNumber {
 	
@@ -20,6 +17,11 @@ public class ArrangeNumbersToFormSmallestNumber {
 			String secondNumber = ((Sort) b).number + number;
 			return firstNumber.compareTo(secondNumber);
 		}
+
+		@Override
+		public String toString() {
+			return number.toString();
+		}
 	}
 
 	private static void sort(String arr[]) {
@@ -31,6 +33,7 @@ public class ArrangeNumbersToFormSmallestNumber {
 			list.add(new Sort(arr[i]));
 		}
 		Collections.sort(list);
+		System.out.print(Arrays.toString(list.toArray()) + " ==> ");
 		Iterator<Sort> it = list.iterator();
 		while (it.hasNext()) {
 			System.out.print(it.next().number);

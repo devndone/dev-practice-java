@@ -119,9 +119,12 @@ public class SpiralOrder2DArrayGeneration {
 		Integer[][] a = generateMatrix1(4);
 		int n = 0, m = 0;
 		while (n < a.length) {
-			System.out.println("[");
+			System.out.print("[");
 			while(m < a.length) {
-				System.out.print(", " + a[n][m]);
+				System.out.print(a[n][m]);
+				if(m < a.length - 1) {
+					System.out.print(", ");
+				}
 				m++;
 			}
 			m = 0;

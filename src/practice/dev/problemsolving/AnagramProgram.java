@@ -151,9 +151,9 @@ public class AnagramProgram {
 		// Output
 
 		if (status) {
-			System.out.println(s1 + " and " + s2 + " are anagrams");
+			System.out.println("\"" + s1 + "\" and \"" + s2 + "\" are anagrams");
 		} else {
-			System.out.println(s1 + " and " + s2 + " are not anagrams");
+			System.out.println("\"" + s1 + "\" and \"" + s2 + "\" are not anagrams");
 		}
 	}
 

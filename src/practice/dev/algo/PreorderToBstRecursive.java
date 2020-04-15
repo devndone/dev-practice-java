@@ -1,6 +1,6 @@
 package practice.dev.algo;
 
-public class PreorderToTreeRecursive {
+public class PreorderToBstRecursive {
 
 	class Node {
 		int data;
@@ -42,7 +42,7 @@ public class PreorderToTreeRecursive {
 	}
 
 	public static void main(String args[]) {
-		PreorderToTreeRecursive p = new PreorderToTreeRecursive();
+		PreorderToBstRecursive p = new PreorderToBstRecursive();
 		int[] preOrder = { 20, 10, 5, 1, 7, 15, 30, 25, 35, 32, 40 };
 		Node root = p.constructTree(preOrder, preOrder[0], Integer.MIN_VALUE,
 				Integer.MAX_VALUE);
