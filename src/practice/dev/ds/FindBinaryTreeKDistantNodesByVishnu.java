@@ -8,7 +8,7 @@ public class FindBinaryTreeKDistantNodesByVishnu {
         Stack<BinaryNode> stack = new Stack<>();
         boolean status = findTheElementWithRoot(root, destinationNode, stack);
         int size = 0;
-        if (status){
+        if (status) {
             Set<BinaryNode> setOfSkipNodes = new HashSet<>();
             BinaryNode prev = null;
             while ((stack.size() != 0) && (size <= length)) {
@@ -19,6 +19,7 @@ public class FindBinaryTreeKDistantNodesByVishnu {
             }
         }
     }
+
     private void print(BinaryNode dataTree , int length, BinaryNode skipNode, int i) {
         if (dataTree == null) {
             return;
